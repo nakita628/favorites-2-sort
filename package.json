@@ -1,13 +1,16 @@
 {
   "name": "favorites-2-sort",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
+  "type": "module",
+  "module": "index.ts",
   "scripts": {
-    "test": "bun test"
+    "test": "bun test",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "oxfmt": "^0.73.0"
   },
   "peerDependencies": {
     "typescript": "^7"

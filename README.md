@@ -10,12 +10,12 @@ Wikipedia の[ソート](https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%
 
 ```ts
 export function quicksort(xs: readonly number[]) {
-  if (xs.length <= 1) return [...xs];
-  const pivot = xs[Math.floor(xs.length / 2)]!;
-  const lesser: number[] = quicksort(xs.filter((x) => x < pivot));
-  const equal = xs.filter((x) => x === pivot);
-  const greater: number[] = quicksort(xs.filter((x) => x > pivot));
-  return [...lesser, ...equal, ...greater];
+  if (xs.length <= 1) return [...xs]
+  const pivot = xs[Math.floor(xs.length / 2)]!
+  const lesser: number[] = quicksort(xs.filter((x) => x < pivot))
+  const equal = xs.filter((x) => x === pivot)
+  const greater: number[] = quicksort(xs.filter((x) => x > pivot))
+  return [...lesser, ...equal, ...greater]
 }
 ```
 
@@ -47,12 +47,12 @@ sequenceDiagram
 export function insertionSort(xs: readonly number[]) {
   // ソート済みの sorted に、x を小さい順の場所に差し込んだ新しい配列を返す
   const insert = (sorted: number[], x: number) => {
-    const left = sorted.filter((y) => y <= x); // x 以下は左へ
-    const right = sorted.filter((y) => y > x); // x より大きいは右へ
-    return [...left, x, ...right];
-  };
+    const left = sorted.filter((y) => y <= x) // x 以下は左へ
+    const right = sorted.filter((y) => y > x) // x より大きいは右へ
+    return [...left, x, ...right]
+  }
 
-  return xs.reduce<number[]>(insert, []);
+  return xs.reduce<number[]>(insert, [])
 }
 ```
 
